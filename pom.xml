@@ -3,6 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <packaging>war</packaging>
 
     <groupId>com.epam</groupId>
     <artifactId>spring-course</artifactId>
@@ -13,6 +14,7 @@
         <aspectj.ver>1.8.8</aspectj.ver>
         <hibernate.ver>5.1.0.Final</hibernate.ver>
         <h2.ver>1.4.191</h2.ver>
+        <jstl.ver>1.2</jstl.ver>
     </properties>
 
     <dependencies>
@@ -30,6 +32,21 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-expression</artifactId>
             <version>${spring.ver}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.ver}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${spring.ver}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.ver}</version>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -92,6 +109,28 @@
                 <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.3</version>
+                <configuration>
+                    <warSourceDirectory>WebContent</warSourceDirectory>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <ignorePackaging>true</ignorePackaging>
+                    <url>http://localhost:8080/</url>
+                    <server>TomcatServer</server>
+                    <username>tomcat</username>
+                    <password>password</password>
                 </configuration>
             </plugin>
         </plugins>
