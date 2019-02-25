@@ -126,11 +126,9 @@
                 <artifactId>tomcat7-maven-plugin</artifactId>
                 <version>2.2</version>
                 <configuration>
-                    <ignorePackaging>true</ignorePackaging>
+                    <ignorePackaging>false</ignorePackaging>
                     <url>http://localhost:8080/</url>
-                    <!--<server>TomcatServer</server>-->
-                    <!--<username>tomcat</username>-->
-                    <!--<password>password</password>-->
+                    <!--<path>/</path>-->
                 </configuration>
             </plugin>
         </plugins>

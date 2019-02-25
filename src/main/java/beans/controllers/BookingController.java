@@ -12,14 +12,8 @@ public class BookingController {
     @RequestMapping(value = "/booking", method = RequestMethod.GET)
     public ModelAndView helloWorld() {
 
-        String message = "<br><div style='text-align:center;'>"
-                + "<h3>********** Hello World, Spring MVC Tutorial</h3>This message is coming from CrunchifyHelloWorld.java **********</div><br><br>";
+        String message = "helloWorld";
         return new ModelAndView("welcome", "message", message);
     }
 
-    @RequestMapping(value = "/")
-    public String root(){
-
-        return "welcome";
-    }
 }
