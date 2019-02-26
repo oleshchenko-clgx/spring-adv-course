@@ -128,7 +128,7 @@
                 <configuration>
                     <ignorePackaging>false</ignorePackaging>
                     <url>http://localhost:8080/</url>
-                    <!--<path>/</path>-->
+                    <path>/</path>
                 </configuration>
             </plugin>
         </plugins>
