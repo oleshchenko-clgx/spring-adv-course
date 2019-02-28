@@ -1,5 +1,10 @@
 package beans.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
 
 /**
@@ -10,9 +15,12 @@ import java.time.LocalDate;
  */
 public class User {
 
+    public static final String DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm";
+
     private long      id;
     private String    email;
     private String    name;
+    @DateTimeFormat(pattern = DATE_TIME_PATTERN)
     private LocalDate birthday;
 
     public User() {

@@ -7,9 +7,40 @@
 
     <mvc:annotation-driven/>
     <mvc:default-servlet-handler/>
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
 
-    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean id="freemarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/META-INF/freemarker/"/>
+    </bean>
+
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="suffix" value=".ftl"/>
+    </bean>
+
+    <bean id="viewResolver2" class="org.springframework.web.servlet.view.ResourceBundleViewResolver">
+        <property name="basename" value="views"/>
+    </bean>
+
+    <bean id="viewResolver3" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <bean id="ticketsPdf"
+          class="beans.view.PDFPageView">
+    </bean>
+
+    <!--<bean id="multipartResolver"-->
+          <!--class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
+        <!--&lt;!&ndash; Maximum file size in bytes &ndash;&gt;-->
+        <!--<property name="maxUploadSize" value="100000"/>-->
+        <!--&lt;!&ndash; Maximum file size to keep in memory &ndash;&gt;-->
+        <!--<property name="maxInMemorySize" value="50000"/>-->
+    <!--</bean>-->
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+    </bean>
+
+
 </beans>
