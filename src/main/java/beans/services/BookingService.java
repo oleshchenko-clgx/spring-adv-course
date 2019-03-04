@@ -2,6 +2,7 @@ package beans.services;
 
 import beans.models.Ticket;
 import beans.models.User;
+import org.springframework.security.access.annotation.Secured;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -18,5 +19,6 @@ public interface BookingService {
 
     Ticket bookTicket(User user, Ticket ticket);
 
+    @Secured({"ROLE_BOOKING_MANAGER"})
     List<Ticket> getTicketsForEvent(String event, String auditorium, LocalDateTime date);
 }
