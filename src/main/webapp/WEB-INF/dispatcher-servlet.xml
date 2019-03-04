@@ -30,14 +30,6 @@
           class="beans.view.PDFPageView">
     </bean>
 
-    <!--<bean id="multipartResolver"-->
-          <!--class="org.springframework.web.multipart.commons.CommonsMultipartResolver">-->
-        <!--&lt;!&ndash; Maximum file size in bytes &ndash;&gt;-->
-        <!--<property name="maxUploadSize" value="100000"/>-->
-        <!--&lt;!&ndash; Maximum file size to keep in memory &ndash;&gt;-->
-        <!--<property name="maxInMemorySize" value="50000"/>-->
-    <!--</bean>-->
-
     <bean id="multipartResolver"
           class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
     </bean>

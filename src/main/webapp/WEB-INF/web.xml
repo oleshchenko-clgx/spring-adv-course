@@ -6,7 +6,8 @@
 
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/dispatcher-servlet.xml</param-value>
+        <param-value>/WEB-INF/dispatcher-servlet.xml,
+            /WEB-INF/spring/*.xml</param-value>
     </context-param>
 
     <servlet>
@@ -17,6 +18,7 @@
             <param-value>
                 classpath:dispatcher-servlet.xml
                 classpath:spring.xml
+                /WEB-INF/spring/*.xml
             </param-value>
         </init-param>
         <multipart-config>
@@ -31,5 +33,19 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
 
 </web-app>
