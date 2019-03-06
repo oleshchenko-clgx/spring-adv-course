@@ -1,8 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <html>
 <head>
-    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Welcome page</title>
 </head>
 <body>
+    Greeting : ${greeting}
+    This is a welcome page.
 
 <h3>bookingService.getTicketsForEvent</h3>
 <p><a href="booking/purchasedtickets?event=Kvitka Concert&auditorium=Yellow hall&date=2019-02-27T10:00:00.000">Get purchased tickets</a></p>
@@ -16,6 +20,7 @@
     <label>Event name:</label><input type="text" value="Kvitka Concert" name="event">
     <label>Auditorium:</label><input type="text" value="Yellow hall" name="auditorium">
     <label>Event Date:</label><input type="" value="2019-02-27T10:00:00" name="date">
+    <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
     <input type="submit" value="Book ticket">
 </form>
 
@@ -35,6 +40,7 @@
     <label>Ordered seats:</label><input type="text" value="33,35" name="seats"><br/>
     <label>Price:</label><input type="text" value="65.8" name="price"><br/>
     <label>User Id:</label><input type="text" value="1" name="userId"><br/><br/>
+    <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
     <input type="submit" value="Book ticket">
 </form>
 <br/>
@@ -50,6 +56,7 @@
     <br/>
     <label>Ordered seats:</label><input type="text" value="33,35" name="seats"><br/>
     <label>User Id:</label><input type="text" value="1" name="userId"><br/><br/>
+    <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
     <input type="submit" value="Get ticket price">
 </form>
 <br/>
@@ -59,6 +66,7 @@
 <form method="post" action="/upload" enctype="multipart/form-data">
     <input type="file" name="users">
     <input type="file" name="users">
+    <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
     <input type="submit">
 </form>
 <p>
@@ -66,6 +74,7 @@ Files to Download first: <br/>
     <a href="http://localhost:8080/resources/files/user1.json">File 1</a><br/>
     <a href="http://localhost:8080/resources/files/user2.json">File 2</a>
 </p>
+
 
 </body>
 </html>

@@ -34,5 +34,12 @@
           class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
     </bean>
 
+    <bean id="passwordEncoder"
+          class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+        <constructor-arg value="11"/>
+    </bean>
+
+    <bean id="myUserDetailsService"
+          class="beans.services.BookingServiceImpl"/>
 
 </beans>
