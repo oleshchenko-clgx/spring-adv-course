@@ -2,6 +2,7 @@ package beans.daos;
 
 import beans.models.User;
 
+import javax.jws.soap.SOAPBinding;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,6 +21,8 @@ public interface UserDAO {
     User get(long id);
 
     User getByEmail(String email);
+
+    User getByName(String accountName);
 
     List<User> getAllByName(String name);
 

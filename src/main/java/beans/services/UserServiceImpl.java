@@ -19,7 +19,7 @@ import java.util.List;
  * Date: 2/1/2016
  * Time: 7:30 PM
  */
-@Service
+@Service(value = "userService")
 @Transactional
 public class UserServiceImpl implements UserService, UserDetailsService {
 
@@ -48,6 +48,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     public List<User> getUsersByName(String name) {
         return userDAO.getAllByName(name);
+    }
+
+    @Override
+    public User findUserByName(String name) {
+        return userDAO.getByName(name);
     }
 
     public List<Ticket> getBookedTickets() {

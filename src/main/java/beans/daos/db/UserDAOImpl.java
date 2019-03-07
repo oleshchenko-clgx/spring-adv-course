@@ -49,6 +49,11 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     }
 
     @Override
+    public User getByName(String accountName) {
+        return ((User) createBlankCriteria(User.class).add(Restrictions.eq("name", accountName)).uniqueResult());
+    }
+
+    @Override
     @SuppressWarnings("unchecked")
     public List<User> getAllByName(String name) {
         return createBlankCriteria(User.class).list();

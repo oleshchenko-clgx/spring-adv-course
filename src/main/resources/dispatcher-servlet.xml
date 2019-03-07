@@ -40,6 +40,6 @@
     </bean>
 
     <bean id="myUserDetailsService"
-          class="beans.services.BookingServiceImpl"/>
+          class="beans.services.MyUserDetailsService"/>
 
 </beans>

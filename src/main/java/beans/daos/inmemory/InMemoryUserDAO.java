@@ -62,6 +62,11 @@ public class InMemoryUserDAO implements UserDAO {
         return dbEmailIndex.get(email);
     }
 
+    @Override
+    public User getByName(String accountName) {
+        return null;
+    }
+
     public List<User> getAllByName(String name) {
         return dbNameIndex.get(name).stream().collect(Collectors.toList());
     }

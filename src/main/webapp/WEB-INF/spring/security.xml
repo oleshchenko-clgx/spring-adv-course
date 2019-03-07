@@ -31,13 +31,12 @@
     <authentication-manager>
         <authentication-provider
                 user-service-ref="myUserDetailsService" >
-            <password-encoder ref="passwordEncoder">
-            </password-encoder>
+            <!--<password-encoder ref="passwordEncoder">-->
+            <!--</password-encoder>-->
         </authentication-provider>
     </authentication-manager>
 
     <global-method-security jsr250-annotations="enabled" secured-annotations="enabled"/>
-
 
 
 </b:beans>
