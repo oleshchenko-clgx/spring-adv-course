@@ -7,7 +7,7 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>classpath:dispatcher-servlet.xml,
-            /WEB-INF/spring/*.xml</param-value>
+           classpath:security.xml</param-value>
     </context-param>
 
     <servlet>
@@ -18,7 +18,7 @@
             <param-value>
                 classpath:dispatcher-servlet.xml
                 classpath:spring.xml
-                /WEB-INF/spring/*.xml
+                classpath:security.xml
             </param-value>
         </init-param>
         <multipart-config>

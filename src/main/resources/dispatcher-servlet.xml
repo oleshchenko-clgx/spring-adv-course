@@ -39,7 +39,9 @@
         <constructor-arg value="11"/>
     </bean>
 
-    <bean id="myUserDetailsService"
-          class="beans.services.MyUserDetailsService"/>
+    <bean id="myUserDetailsService" class="beans.services.MyUserDetailsService">
+
+    </bean>
+
 
 </beans>

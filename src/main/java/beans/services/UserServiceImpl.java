@@ -19,9 +19,9 @@ import java.util.List;
  * Date: 2/1/2016
  * Time: 7:30 PM
  */
-@Service(value = "userService")
+@Service(value = "userServiceImpl")
 @Transactional
-public class UserServiceImpl implements UserService, UserDetailsService {
+public class UserServiceImpl implements UserService {
 
     private final UserDAO userDAO;
 
@@ -57,10 +57,5 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     public List<Ticket> getBookedTickets() {
         throw new UnsupportedOperationException("not implemented yet");
-    }
-
-    @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        return null;
     }
 }
