@@ -16,6 +16,7 @@
 
         <form-login  login-page="/login" username-parameter="ssoId" password-parameter="password" authentication-failure-url="/Access_Denied" />
         <csrf/>
+        <logout/>
     </http>
 
 

@@ -5,8 +5,9 @@
     <title>Welcome page</title>
 </head>
 <body>
-    Greeting : ${greeting}
-    This is a welcome page.
+
+<a href="/logout">Logout</a>
+<p/>
 
 <h3>bookingService.getTicketsForEvent</h3>
 <p><a href="booking/purchasedtickets?event=Kvitka Concert&auditorium=Yellow hall&date=2019-02-27T10:00:00.000">Get purchased tickets</a></p>
