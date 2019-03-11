@@ -5,9 +5,6 @@ import beans.models.Ticket;
 import beans.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -19,7 +16,7 @@ import java.util.List;
  * Date: 2/1/2016
  * Time: 7:30 PM
  */
-@Service(value = "userServiceImpl")
+@Service("userServiceImpl")
 @Transactional
 public class UserServiceImpl implements UserService {
 

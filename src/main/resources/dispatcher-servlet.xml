@@ -9,6 +9,8 @@
     <mvc:default-servlet-handler/>
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
+    <context:component-scan base-package="beans"/>
+
     <bean id="freemarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
         <property name="templateLoaderPath" value="/META-INF/freemarker/"/>
     </bean>
@@ -40,7 +42,7 @@
     </bean>
 
     <bean id="myUserDetailsService" class="beans.services.MyUserDetailsService">
-
+        <constructor-arg ref="userServiceImpl"/>
     </bean>
 
 

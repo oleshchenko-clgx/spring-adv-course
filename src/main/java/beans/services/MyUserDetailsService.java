@@ -11,14 +11,14 @@ import org.springframework.stereotype.Service;
 @Service
 public class MyUserDetailsService implements UserDetailsService {
 
-    @Autowired
-    @Qualifier("userServiceImpl")
+//    @Autowired
+//    @Qualifier("userServiceImpl")
     private UserService userService;
 
-//    @Autowired
-//    public MyUserDetailsService(@Qualifier("userServiceImpl") UserService userService) {
-//        this.userService = userService;
-//    }
+    @Autowired
+    public MyUserDetailsService(@Qualifier("userServiceImpl") UserService userService) {
+        this.userService = userService;
+    }
 
     @Override
     public UserDetails loadUserByUsername(String username) {
