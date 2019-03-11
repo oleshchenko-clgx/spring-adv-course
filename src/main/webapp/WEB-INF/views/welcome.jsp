@@ -8,6 +8,13 @@
 
 <a href="/logout">Logout</a>
 <p/>
+<sec:authorize access="isRememberMe()">
+		<h2># This user is login by "Remember Me Cookies".</h2>
+	</sec:authorize>
+
+	<sec:authorize access="isFullyAuthenticated()">
+		<h2># This user is login by username / password.</h2>
+	</sec:authorize>
 
 <h3>bookingService.getTicketsForEvent</h3>
 <p><a href="booking/purchasedtickets?event=Kvitka Concert&auditorium=Yellow hall&date=2019-02-27T10:00:00.000">Get purchased tickets</a></p>
