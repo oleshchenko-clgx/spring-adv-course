@@ -1,6 +1,7 @@
 package beans.models;
 
 import java.time.LocalDateTime;
+import java.util.StringJoiner;
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,6 +18,8 @@ public class Event {
     private LocalDateTime dateTime;
     private Auditorium    auditorium;
 
+    private Double ticketPrice;
+
     public Event() {
     }
 
@@ -25,12 +28,17 @@ public class Event {
     }
 
     public Event(long id, String name, Rate rate, double basePrice, LocalDateTime dateTime, Auditorium auditorium) {
+        this(id, name, rate, basePrice, dateTime, auditorium, new Double(0));
+    }
+
+    public Event(long id, String name, Rate rate, double basePrice, LocalDateTime dateTime, Auditorium auditorium, Double ticketPrice) {
         this.id = id;
         this.name = name;
         this.rate = rate;
         this.basePrice = basePrice;
         this.dateTime = dateTime;
         this.auditorium = auditorium;
+        this.ticketPrice = ticketPrice;
     }
 
     public Event withId(Long eventId) {
@@ -85,6 +93,14 @@ public class Event {
         this.auditorium = auditorium;
     }
 
+    public Double getTicketPrice() {
+        return ticketPrice;
+    }
+
+    public void setTicketPrice(Double ticketPrice) {
+        this.ticketPrice = ticketPrice;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -124,13 +140,14 @@ public class Event {
 
     @Override
     public String toString() {
-        return "Event{" +
-               "id=" + id +
-               ", name='" + name + '\'' +
-               ", rate=" + rate +
-               ", basePrice=" + basePrice +
-               ", dateTime=" + dateTime +
-               ", auditorium=" + auditorium +
-               '}';
+        return new StringJoiner(", ", Event.class.getSimpleName() + "[", "]")
+                .add("id=" + id)
+                .add("name='" + name + "'")
+                .add("rate=" + rate)
+                .add("basePrice=" + basePrice)
+                .add("dateTime=" + dateTime)
+                .add("auditorium=" + auditorium)
+                .add("ticketPrice=" + ticketPrice)
+                .toString();
     }
 }
