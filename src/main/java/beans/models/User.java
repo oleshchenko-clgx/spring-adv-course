@@ -1,10 +1,8 @@
 package beans.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.xml.bind.annotation.*;
 import java.time.LocalDate;
 
 /**
@@ -13,17 +11,26 @@ import java.time.LocalDate;
  * Date: 2/1/2016
  * Time: 7:35 PM
  */
+@XmlRootElement(name = "user")
+@XmlType(namespace = "http://epam.com")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class User {
 
     public static final String DATE_TIME_PATTERN = "yyyy-MM-dd HH:mm";
 
-    private long      id;
-    private String    email;
-    private String    name;
+    @XmlElement
+    private long id;
+    @XmlElement
+    private String email;
+    @XmlElement
+    private String name;
     @DateTimeFormat(pattern = DATE_TIME_PATTERN)
+    @XmlElement
     private LocalDate birthday;
 
+    @XmlElement
     private String password;
+    @XmlElement
     private String roles;
 
     public User() {
@@ -123,10 +130,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-               "id=" + id +
-               ", email='" + email + '\'' +
-               ", name='" + name + '\'' +
-               ", birthday=" + birthday +
-               '}';
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", birthday=" + birthday +
+                '}';
     }
 }

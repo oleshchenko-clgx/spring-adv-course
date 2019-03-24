@@ -134,11 +134,11 @@ public class Main {
 //        System.out.println();
 //        System.out.println("LuckyWinnerAspect.getLuckyUsers() = " + LuckyWinnerAspect.getLuckyUsers());
 
-        String password = "password";
-        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        String hashedPassword = passwordEncoder.encode(password);
-
-        System.out.println(hashedPassword);
+//        String password = "password";
+//        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+//        String hashedPassword = passwordEncoder.encode(password);
+//
+//        System.out.println(hashedPassword);
 
     }
 }

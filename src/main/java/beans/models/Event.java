@@ -1,5 +1,6 @@
 package beans.models;
 
+import javax.xml.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.StringJoiner;
 
@@ -9,13 +10,22 @@ import java.util.StringJoiner;
  * Date: 2/1/2016
  * Time: 7:42 PM
  */
+@XmlRootElement
+@XmlType(namespace = "http://epam.com")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Event {
 
+    @XmlElement
     private long          id;
+    @XmlElement
     private String        name;
+    @XmlElement
     private Rate          rate;
+    @XmlElement
     private double        basePrice;
+    @XmlElement
     private LocalDateTime dateTime;
+    @XmlElement
     private Auditorium    auditorium;
 
     private Double ticketPrice;

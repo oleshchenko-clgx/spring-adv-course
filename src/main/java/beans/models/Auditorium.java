@@ -2,6 +2,8 @@ package beans.models;
 
 import util.CsvUtil;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import java.util.List;
 
 /**
@@ -10,6 +12,7 @@ import java.util.List;
  * Date: 2/1/2016
  * Time: 7:55 PM
  */
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Auditorium {
 
     private long   id;
