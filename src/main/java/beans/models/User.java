@@ -3,6 +3,7 @@ package beans.models;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDate;
 
 /**
@@ -12,7 +13,7 @@ import java.time.LocalDate;
  * Time: 7:35 PM
  */
 @XmlRootElement(name = "user")
-@XmlType(namespace = "http://epam.com")
+//@XmlType(namespace = "http://epam.com")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class User {
 
@@ -25,7 +26,9 @@ public class User {
     @XmlElement
     private String name;
     @DateTimeFormat(pattern = DATE_TIME_PATTERN)
-    @XmlElement
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
+//    @XmlSchemaType(name="dateTime")
+//    @XmlElement
     private LocalDate birthday;
 
     @XmlElement
